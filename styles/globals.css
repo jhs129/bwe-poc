@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply dark:bg-primaryDark bg-secondaryLight dark:text-white text-black text-xl leading-8;
+  }
+
+  h1 {
+    @apply text-3xl dark:text-white text-primaryDark mb-4 font-sans font-bold uppercase;
+  }
+  h2 {
+    @apply text-2xl dark:text-primaryAccent text-primaryDark mb-4 tracking-wider capitalize font-bold;
+  }
+  h3 {
+    @apply text-xl mb-4 font-secondary font-bold dark:text-secondaryDark text-primaryDark;
+  }
+  h4 {
+    @apply text-lg dark:text-primaryAccent text-primaryDark mb-4 font-sans;
+  }
+  h5 {
+    @apply text-base mb-4 text-primaryDark font-bold font-sans;
+  }
+  h6 {
+    @apply mb-4 font-secondary;
+  }
+  p {
+    @apply mb-4 font-sans;
+  }
+  a {
+    @apply dark:text-primaryAccent hover:text-secondaryAccent text-secondaryDark;
+  }
+  button {
+    @apply mx-auto px-6 py-2 dark:bg-primaryAccent bg-primaryDark hover:bg-secondaryDark text-primaryLight hover:text-primaryAccent rounded-lg;
+  }
+
+  ul {
+    @apply list-disc list-inside align-top;
+  }
+
+  li {
+    @apply list-image-ringsSecondaryAccent dark:list-image-ringsPrimaryAccent mb-4 break-inside-avoid-column;
+  }
+
+  input {
+    @apply text-black bg-primaryLight border-primaryAccent border-2 rounded-lg p-2 placeholder:text-primaryDark placeholder:italic placeholder:font-extralight;
+  }
+
+  textarea {
+    @apply text-black bg-primaryLight border-primaryAccent border-2 rounded-lg p-2  placeholder:text-primaryDark placeholder:italic placeholder:font-extralight;
+  }
+
+  img {
+    @apply shadow-lg rounded-lg;
+  }
+
+}
+
+.form-label {
+    @apply text-lg dark:text-primaryAccent text-primaryDark mb-4 capitalize font-semibold;
+} 
+
+.btn-carousel {
+  @apply bg-tertiaryAccent hover:bg-secondaryDark text-white border border-tertiaryAccent rounded-lg px-2 py-4 capitalize;
+}
+
+.site-container {
+  @apply container mx-auto p-4;
+}
+
+.theme-dark {
+  @apply bg-primaryDark text-white;
+}
+
+.theme-dark-2 {
+  @apply bg-secondaryDark text-white;
+}
+
+.theme-light {
+  @apply bg-primaryLight text-black;
+}
+
+/* HAMBURGER MENU */
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  @apply bg-primaryAccent;
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  top: 0;
+  left: 0;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.social-icon {
+  @apply bg-no-repeat bg-center bg-contain text-primaryAccent;
+}
+
+.social-icon-fb {
+  background-image: url('/images/social-icons/icon-fb.svg');
+}
+
+.social-icon-linkedin {
+  background-image: url('/images/social-icons/icon-li.svg');
+}
+
+.social-icon-twitter {
+  background-image: url('/images/social-icons/icon-twitter.svg');
+}
+
+.social-icon-x {
+  background-image: url('/images/social-icons/icon-twitter.svg');
+}
+
+.social-icon-instagram {
+  background-image: url('/images/social-icons/icon-instagram.svg');
+}
+
+.social-icon-youtube {
+  background-image: url('/images/social-icons/icon-youtube.svg');
+}
+
+.social-icon-threads {
+  background-image: url('/images/social-icons/icon-threads.svg');
+}
+
+.social-icon-tiktok {
+  background-image: url('/images/icon-tiktok.svg');
+}
