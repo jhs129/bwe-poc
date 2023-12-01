@@ -14,6 +14,13 @@ function Header(props) {
     navigation = props.navigation;
   }
 
+  let mobileNavigation;
+  if(!props.mobileNavigation ) {
+    mobileNavigation = getDefaultContent();
+  } else {
+    mobileNavigation = props.mobileNavigation;
+  }
+
   let logoImage = "/logo-prod.webp";
   if (props?.logo) {
     logoImage = props.logo;
@@ -68,13 +75,13 @@ function Header(props) {
             {/*  Hamburger Button */}
             <div
               id="hamburger-div"
-              className="absolute right-0 top-6 md:flex md:items-center md:justify-end bg-primaryLight"
+              className={`absolute right-4 top-12 md:flex md:items-center md:justify-end${ isOpen ? " bg-nav1" : " bg-primaryLight"}`}
             >
               <button
                 id="menu-btn"
                 aria-label="hamburger menu"
-                className={`block md:hidden hamburger bg-primaryLight hover:bg-primaryLight focus:outline-none ${
-                  isOpen ? "open hover:bg-nav1" : ""
+                className={`block md:hidden hamburger  focus:outline-none ${
+                  isOpen ? "open bg-nav1 hover:bg-nav1" : " bg-primaryLight hover:bg-primaryLight "
                 }`}
                 type="button"
                 onClick={() => {
@@ -97,7 +104,7 @@ function Header(props) {
             className="flex flex-col items-end pt-4 w-full self-start md:max-w-full"
           >
             {/* Navigation */}
-            <nav>
+            <nav className="mx-auto md:mx-0">
               {/* Desktop Navigation */}
 
               <div id="desktop-nav" className="hidden md:flex md:flex-row">
@@ -143,7 +150,7 @@ function Header(props) {
                 id="mobile-nav"
                 className="hidden flex-col bg-nav1 text-primaryLight font-sans tracking-wide mx-auto md:hidden"
               >
-                <MobileNav />
+                <MobileNav navigation={mobileNavigation}/>
               </div>
             </nav>
           </div>

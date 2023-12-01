@@ -51,6 +51,7 @@ export default function Home(props) {
       </Head>
       <Header
         navigation={props?.header || undefined}
+        mobileNavigation={props?.headerMobile || undefined}    
         logo={props?.settings?.logo || undefined}
       />
       <main>
@@ -62,6 +63,7 @@ export default function Home(props) {
       <Footer
         navigation={props?.footer || undefined}
         socialLinks={props?.socialLinks || undefined}
+        logo={props?.settings?.altLogo || undefined}
         copyright={props?.settings?.copyright || undefined}
       />
     </>
@@ -71,8 +73,12 @@ export default function Home(props) {
 export const getStaticProps = async ({ params }) => {
   // Fetch the builder content for the given page
 
-  const headerContent = await builder
+  const desktopTopNav = await builder
     .get("navigation", { query: { name: "header-navigation" }, enrich: true })
+    .promise();
+
+    const mobileTopNav = await builder
+    .get("navigation", { query: { name: "header-navigation-mobile" }, enrich: true })
     .promise();
 
   const footerContent = await builder
@@ -102,7 +108,8 @@ export const getStaticProps = async ({ params }) => {
   // Return the page content as props
   return {
     props: {
-      header: headerContent?.data || null,
+      header: desktopTopNav?.data || null,
+      headerMobile: mobileTopNav?.data || null,
       footer: footerContent?.data || null,
       socialLinks: socialLinks?.data || null,
       settings: siteProperties?.data || null,

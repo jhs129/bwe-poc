@@ -11,6 +11,13 @@ function Footer(props) {
     navItems = props.navigation;
   }
 
+  let logo;
+  if (!props.logo) {
+    logo = "/images/bwe-logo-white.webp";
+  } else {
+    logo = props.logo;
+  }
+
   let socialLinks;
   if (!props.socialLinks) {
     socialLinks = getDefaultSocialLinks();
@@ -51,7 +58,7 @@ function Footer(props) {
       <footer className="p-4 flex flex-row mx-auto space-x-8">
         <div id="logo" className="flex flex-col">
           <Image
-            src="/images/bwe-logo-white.webp"
+            src={logo}
             alt="Logo"
             width={150}
             height={65}
