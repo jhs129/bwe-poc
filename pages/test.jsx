@@ -1,13 +1,14 @@
 import Image from "next/image";
-import MobileNav2 from "@/components/layout/mobile-nav2";
+import MobileNav from "@/components/layout/mobile-nav";
+import Header from "@/components/layout/header";
 export default function Home() {
   return (
     <>
     <main>
       <header>
-        <MobileNav2 />
+        <Header />
       </header>
-      <h1>Hello World</h1>
+    
       </main>
     </>
   );

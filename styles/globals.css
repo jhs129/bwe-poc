@@ -94,7 +94,7 @@
 .hamburger-top,
 .hamburger-middle,
 .hamburger-bottom {
-  @apply bg-primaryAccent;
+  @apply bg-secondaryAccent;
   content: "";
   position: absolute;
   width: 24px;
@@ -124,10 +124,12 @@
 
 .open .hamburger-middle {
   display: none;
+  margin: 0;
 }
 
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  margin: 0;
 }
 
 .hamburger-submenu {

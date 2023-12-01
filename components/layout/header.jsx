@@ -2,6 +2,7 @@ import { useState } from "react";
 import { getDefaultContent } from "./header.content";
 import Link from "next/link";
 import Image from "next/image";
+import MobileNav from "./mobile-nav";
 
 function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ function Header(props) {
     navigation = props.navigation;
   }
 
-  let logoImage = "/logo.png";
+  let logoImage = "/logo-prod.webp";
   if (props?.logo) {
     logoImage = props.logo;
   }
@@ -29,17 +30,21 @@ function Header(props) {
   };
 
   return (
+
     <div className="bg-primaryLight">
       <header className="site-container pt-8 md:py-4 bg-primaryLight">
+
+       
         <div className="flex gap-4 max-md:flex-wrap">
-          <div
-            id="logo"
+
+           {/* Logo and Hamburger Menu - Layer 1 */}
+          <div  id="logo"
             className="flex flex-row w-full md:w-80 justify-between"
           >
             {/* Logo Image */}
-            <div className="flex bg-primaryLight">
+            <div className="flex bg-primaryLight mx-auto">
               <Link href="/">
-                <Image src={logoImage} alt="Logo Image" width={500} height={200} />
+                <Image src={logoImage} alt="Logo Image" width={100} height={40} className="rounded-none shadow-none"/>
               </Link>
             </div>
 
@@ -57,25 +62,26 @@ function Header(props) {
                   toggleMenu();
                 }}
               >
+                <div className="flex flex-col">
                 <span  className="hamburger-top"></span>
-                <span className="hamburger-middle"></span>
-                <span className="hamburger-bottom"></span>
+                <span className="mt-1 hamburger-middle"></span>
+                <span className="mt-2 hamburger-bottom"></span>
+                </div>
               </button>
             </div>
           </div>
 
-          {/* Desktop Nav */}
-          <div
-            id="nav"
+          {/* Navigation */}
+          <div id="nav"
             className="flex flex-col items-center pt-4 w-full self-start md:max-w-full md:items-end"
           >
             {/* Navigation */}
             <nav>
-              {/* Desktop Navigation */}
 
-              <div
-                id="desktop-nav"
-                className="hidden md:flex  self-stretch bg-items-end justify-between gap-5 mt-4 max-md:max-w-full max-md:flex-wrap max-md:justify-center "
+
+              {/* Desktop Navigation */}
+              <div  id="desktop-nav"
+                className="hidden md:flex  self-stretch bg-items-end justify-between gap-5 mt-4 max-md:max-w-full max-md:flex-wrap max-md:justify-center"
               >
                 {navigation.group[0].level1.map((item, index) => (
                   <Link
@@ -90,22 +96,12 @@ function Header(props) {
               </div>
 
               {/* Mobile Navigation */}
+              <div  id="mobile-nav" 
+                    className="hidden flex-col bg-nav1 text-primaryLight font-sans tracking-wide mx-auto">
 
-              <div
-                id="mobile-nav"
-                className="hidden bg-tertiaryDark flex-col mx-auto items-start p-4 -mt-20 text-center md:hidden"
-              >
-                {navigation.group[0].level1.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.src}
-                    className="p-2 text-xs leading-6 font-bold w-full text-left capitalize text-primaryLight"
-                    aria-label={item.text}
-                  >
-                    {item.text}
-                  </Link>
-                ))}
+              <MobileNav/>
               </div>
+
             </nav>
           </div>
         </div>

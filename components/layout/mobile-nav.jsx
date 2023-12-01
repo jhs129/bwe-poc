@@ -1,8 +1,30 @@
+import Image from "next/image";
+import React, { useState } from "react";
+
 const content = [
   {
-    label: "Available Properties",
-    link: "https://www.bwe.com",
+    label: "Mortgage Banking",
+    subItems: [
+      {
+        label: "Property Types",
+        link: "https://www.bwe.com/weekly-rates",
+      },
+      {
+        label: "Finance Options",
+        link: "https://www.bwe.com/affordable-rates",
+      },
+    ],
   },
+  {
+    label: "Investment Sales",
+    subItems: [
+      {
+        label: "Available Properties",
+        link: "https://www.bwe.com",
+      },
+    ],
+  },
+
   {
     label: "Locations",
     link: "https://www.bwe.com/locations",
@@ -63,92 +85,85 @@ const content = [
   },
 ];
 
-
-
 function MobileNav(props) {
+  const [expandedItems, setExpandedItems] = useState([]);
+
+  const handleItemClick = (index) => {
+    if (expandedItems.includes(index)) {
+      setExpandedItems(expandedItems.filter((item) => item !== index));
+    } else {
+      setExpandedItems([...expandedItems, index]);
+    }
+
+    const col1 = document.querySelectorAll(`.col1-index-${index}`);
+    col1.forEach((element) => {
+      element.classList.toggle("open");
+    });
+
+    const col2 = document.querySelectorAll(`.col2-index-${index}`);
+    col2.forEach((element) => {
+      element.classList.toggle("open");
+    });
+
+    const col3 = document.querySelectorAll(`.col3-index-${index}`);
+    col3.forEach((element) => {
+      element.classList.toggle("open");
+    });
+  };
+
+  let navContent;
+  if (props.content) {
+    navContent = props.content;
+  } else {
+    navContent = content;
+  }
+
   return (
-    <div>
-    <nav className="flex flex-col bg-nav1 text-primaryLight text-sm font-bold items-start h-auto py-4  mx-auto text-center md:hidden">
-        <ul className="relative shadow border-none mx-auto">
-          {content.map((menuItem, index) => (
-            <li
-              key={index}
-              data-testid={`MENU_AS_CONTAINER_EXPANDABLE_MENU-${index}`}
-              className="list-none min-w-full h-11 text-center text-primaryLight"
+      <>
+      {navContent.map((item, index) => (
+        <div
+          nav-type="level-1"
+          key={index}
+          className={`flex flex-col text-base font-bold leading-44 h-${
+            expandedItems.includes(index) ? "auto" : "11"
+          }`}
+          onClick={() => handleItemClick(index)}
+        >
+          <div className="flex flex-row">
+            <div className={`hamburger-row col1-index-${index} w-16`}></div>
+            <div
+              className={`hamburger-row col2-index-${index} w-60 text-center`}
             >
-              <div id="itemWrapper" className="grid grid-cols-3">
+              <div className={`hamburger-row col2-index-${index}`}>
+                {item.label}
+              </div>
+            </div>
 
-                  <div className="w-20"></div>
-                  <div>
-                  <a
-                    href="#"
-                    target="_self"
-                    className="h-11user-select-none text-primaryLight text-center nowrap hover:text-blue-500"
->
-                    {menuItem.label}
-                  </a>
-                  </div>
-                <div className="w-20">
-                {menuItem.subItems && (
-                  <button
-                    aria-label={menuItem.label}
-                    className="flex text-primaryLight h-11 bg-nav1 hover:bg-nav1"
-                  >
-                    <div className="min-w-[12px] mx-5 w-4">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 9.2828 4.89817"
-                            className="align-top"
-                            fill="white" // Set the fill color to white
-                        >
-                            <path d="M4.64116,4.89817a.5001.5001,0,0,1-.34277-.13574L.15727.86448A.50018.50018,0,0,1,.84282.136L4.64116,3.71165,8.44.136a.50018.50018,0,0,1,.68555.72852L4.98393,4.76243A.5001.5001,0,0,1,4.64116,4.89817Z"></path>
-                        </svg>
-                    </div>
-                  </button>
-                )}
+            <div className={`hamburger-row col3-index-${index} h-11 w-10`}>
+              {item.subItems && (
+                <div className={`hamburger-row col3-index-${index} text-white`}>
+                  <i
+                    class={`fa-solid fa-chevron-down text-white ${
+                      expandedItems.includes(index) ? "fa-rotate-180" : ""
+                    }`}
+                  ></i>
                 </div>
-              </div>
-              <div className="flex">
-              {menuItem.subItems && (
-                <ul className="flex flex-col">
-                  {menuItem.subItems.map((subItem, subIndex) => (
-                    <li
-                      key={subIndex}
-                      data-testid={`MENU_AS_CONTAINER_EXPANDABLE_MENU-${index}-${subIndex}`}
-                    className="flex flex-col border-none h-11"
-                    >
-                    <div className="flex h-11">
-                        <ul className="flex flex-col text-primaryLight">
-                            {menuItem.subItems.map((subItem, subIndex) => (
-                                <li
-                                    key={subIndex}
-                                    data-testid={`MENU_AS_CONTAINER_EXPANDABLE_MENU-${index}-${subIndex}`}
-                                    className="flex flex-col border-none text-primaryLight h-11 list-none"
-                                >
-                                    <a
-                                        data-testid="linkElement"
-                                        href="#"
-                                        target="_self"
-                                        className="flex flex-col text-primaryLight"
-                                    >
-                                        {subItem.label}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    </li>
-                  ))}
-                </ul>
               )}
-              </div>
+            </div>
+          </div>
 
-
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+          {item.subItems && expandedItems.includes(index) && (
+            <div nav-type="level-2" className="flex flex-col mx-auto h-auto">
+              {item.subItems.map((subItem, subIndex) => (
+                <div className="font-light text-center h-11" key={subIndex}>
+                  {subItem.label}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+      </>
   );
 }
 
