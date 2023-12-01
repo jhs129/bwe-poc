@@ -97,7 +97,7 @@ function Header(props) {
 
               {/* Mobile Navigation */}
               <div  id="mobile-nav" 
-                    className="hidden flex-col bg-nav1 text-primaryLight font-sans tracking-wide mx-auto">
+                    className="hidden flex-col bg-nav1 text-primaryLight font-sans tracking-wide mx-auto md:hidden">
 
               <MobileNav/>
               </div>
