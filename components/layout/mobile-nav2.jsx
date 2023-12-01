@@ -1,10 +1,30 @@
+import Image from "next/image";
 import React, { useState } from "react";
 
 const content = [
   {
-    label: "Available Properties",
-    link: "https://www.bwe.com",
+    label: "Mortgage Banking",
+    subItems: [
+      {
+        label: "Property Types",
+        link: "https://www.bwe.com/weekly-rates",
+      },
+      {
+        label: "Finance Options",
+        link: "https://www.bwe.com/affordable-rates",
+      },
+    ],
   },
+  {
+    label: "Investment Sales",
+    subItems: [
+      {
+        label: "Available Properties",
+        link: "https://www.bwe.com",
+      },
+    ],
+  },
+
   {
     label: "Locations",
     link: "https://www.bwe.com/locations",
@@ -74,6 +94,22 @@ function MobileNav2(props) {
     } else {
       setExpandedItems([...expandedItems, index]);
     }
+
+    const col1 = document.querySelectorAll(`.col1-index-${index}`);
+    col1.forEach((element) => {
+      element.classList.toggle("open");
+    });
+
+    const col2 = document.querySelectorAll(`.col2-index-${index}`);
+    col2.forEach((element) => {
+      element.classList.toggle("open");
+    });
+
+    const col3 = document.querySelectorAll(`.col3-index-${index}`);
+    col3.forEach((element) => {
+      element.classList.toggle("open");
+    });
+
   };
 
   let navContent;
@@ -84,35 +120,36 @@ function MobileNav2(props) {
   }
 
   return (
-    <div className="flex flex-col bg-nav1 text-primaryLight text-sm font-bold mx-auto">
+    <div className="flex flex-col bg-nav1 text-primaryLight font-sans tracking-wide mx-auto">
       {navContent.map((item, index) => (
         <div
           nav-type="level-1"
           key={index}
-          className={`flex flex-row h-${
+          className={`flex flex-row text-base font-bold leading-44 h-${
             expandedItems.includes(index) ? "auto" : "11"
           }`}
           onClick={() => handleItemClick(index)}
         >
-          <div className="w-10"></div>
-          <div className="w-60 text-center">{item.label} </div>
-            <div className="w-10">
-              {item.subItems && (
-                <span className="ml-2 hamburger-submenu">
-                  {/* {expandedItems.includes(index) ? ">" : "V"} */}
-                </span>
-              )}
-            </div>
-         
+          <div className={`hamburger-row col1-index-${index} w-16`}></div>
+          <div className={`hamburger-row col2-index-${index} w-60 text-center`}>
+          <div className={`hamburger-row col3-index-${index}`}>{item.label}</div> 
           {item.subItems && expandedItems.includes(index) && (
             <div nav-type="level-2" className="flex flex-col ml-2.5 h-auto">
               {item.subItems.map((subItem, subIndex) => (
-                <div className="font-normal h-11" key={subIndex}>
+                <div className="font-light  h-11" key={subIndex}>
                   {subItem.label}
                 </div>
               ))}
             </div>
           )}
+          </div>
+            <div className={`w-10`}>
+              {item.subItems && (
+                <div className={`hamburger-row col3-index-${index} text-white`}>
+                <i class={`fa-solid fa-chevron-down hamburger-row col3-index-${index} ${expandedItems.includes(index) ? "fa-rotate-180" : ""}`}></i>
+                </div>
+              )}
+            </div>
         </div>
       ))}
     </div>
@@ -120,3 +157,6 @@ function MobileNav2(props) {
 }
 
 export default MobileNav2;
+
+
+

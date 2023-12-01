@@ -4,8 +4,8 @@ import { Open_Sans, Inter } from "next/font/google";
 
 const primaryFont = Open_Sans({
   subsets: ["latin"],
-  style: ['normal'],
-  weights: [200, 300, 400],
+  style: ['normal', 'italic' ],
+  weights: [200, 300, 400, 500, 600, 700, 800, 900],
   display: "swap",
   variable: '--font-primary',
 });

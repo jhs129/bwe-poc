@@ -19,12 +19,16 @@ module.exports = {
         secondaryDark: '#242323',
         tertiaryDark: '#004976',
         nav1: 'rgba(0,73,118)',
+        bgs: '#126298',
         primaryAccent: '#3FC599',
         secondaryAccent: '#3D9BE9',
         tertiaryAccent: 'rgba(192, 100, 45, 0.7)',
       },
+      lineHeight: {
+        '44': '44px',
+      },
       fontFamily: {
-        sans: ['var(--font-primary)'],
+        primary: ['var(--font-primary)'],
         secondary: ['var(--font-secondary)'],
       },
       listStyleImage: {

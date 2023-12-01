@@ -4,11 +4,11 @@
 
 @layer base {
   body {
-    @apply dark:bg-primaryDark bg-secondaryLight dark:text-white text-black text-xl leading-8;
+    @apply dark:bg-primaryDark bg-secondaryLight dark:text-white text-black text-xl leading-8 font-primary;
   }
 
   h1 {
-    @apply text-3xl dark:text-white text-primaryDark mb-4 font-sans font-bold uppercase;
+    @apply text-3xl dark:text-white text-primaryDark mb-4 font-primary font-bold uppercase;
   }
   h2 {
     @apply text-2xl dark:text-primaryAccent text-primaryDark mb-4 tracking-wider capitalize font-bold;
@@ -17,16 +17,16 @@
     @apply text-xl mb-4 font-secondary font-bold dark:text-secondaryDark text-primaryDark;
   }
   h4 {
-    @apply text-lg dark:text-primaryAccent text-primaryDark mb-4 font-sans;
+    @apply text-lg dark:text-primaryAccent text-primaryDark mb-4 font-primary;
   }
   h5 {
-    @apply text-base mb-4 text-primaryDark font-bold font-sans;
+    @apply text-base mb-4 text-primaryDark font-bold font-primary;
   }
   h6 {
     @apply mb-4 font-secondary;
   }
   p {
-    @apply mb-4 font-sans;
+    @apply mb-4 font-primary;
   }
   a {
     @apply dark:text-primaryAccent hover:text-secondaryAccent text-secondaryDark;
@@ -130,6 +130,48 @@
   transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
 
+.hamburger-submenu {
+background-image: url('/images/down-carat.svg');  
+}
+
+.hamburger-submenu-open {
+  transform: rotate(90deg);
+}
+
+.hamburger-row {
+  @apply bg-nav1;
+}
+
+.open .hamburger-row {
+  @apply bg-bgs;
+}
+
+.hamburger-level1 {
+  --font_1: normal normal normal 16px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+visibility: inherit;
+list-style: none;
+background: transparent;
+border: 0;
+margin: 0;
+outline: 0;
+padding: 0;
+vertical-align: baseline;
+cursor: pointer;
+text-decoration: none;
+bottom: 0;
+display: inline;
+font: var(--fnt,var(--font_1));
+left: 0;
+line-height: 44px;
+overflow: hidden;
+position: absolute;
+right: 0;
+text-overflow: ellipsis;
+top: 0;
+}
+
+
+/* SOCIAL ICONS */
 .social-icon {
   @apply bg-no-repeat bg-center bg-contain text-primaryAccent;
 }

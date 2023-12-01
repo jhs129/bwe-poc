@@ -9,6 +9,8 @@ export default function Document() {
       prefix="og: http://ogp.me/ns#"
     >
       <Head />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+      <script src="https://kit.fontawesome.com/40005e1f7b.js" crossOrigin="anonymous"></script>
       <meta
         name="description"
         content="JHS Digital Consulting offers business transformation services emphasizing Experience Management, eCommerce, and Marketing Technology."
