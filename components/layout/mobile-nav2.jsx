@@ -109,7 +109,6 @@ function MobileNav2(props) {
     col3.forEach((element) => {
       element.classList.toggle("open");
     });
-
   };
 
   let navContent;
@@ -125,31 +124,43 @@ function MobileNav2(props) {
         <div
           nav-type="level-1"
           key={index}
-          className={`flex flex-row text-base font-bold leading-44 h-${
+          className={`flex flex-col text-base font-bold leading-44 h-${
             expandedItems.includes(index) ? "auto" : "11"
           }`}
           onClick={() => handleItemClick(index)}
         >
-          <div className={`hamburger-row col1-index-${index} w-16`}></div>
-          <div className={`hamburger-row col2-index-${index} w-60 text-center`}>
-          <div className={`hamburger-row col3-index-${index}`}>{item.label}</div> 
+          <div className="flex flex-row">
+            <div className={`hamburger-row col1-index-${index} w-16`}></div>
+            <div
+              className={`hamburger-row col2-index-${index} w-60 text-center`}
+            >
+              <div className={`hamburger-row col2-index-${index}`}>
+                {item.label}
+              </div>
+            </div>
+
+            <div className={`hamburger-row col3-index-${index} h-11 w-10`}>
+              {item.subItems && (
+                <div className={`hamburger-row col3-index-${index} text-white`}>
+                  <i
+                    class={`fa-solid fa-chevron-down text-white ${
+                      expandedItems.includes(index) ? "fa-rotate-180" : ""
+                    }`}
+                  ></i>
+                </div>
+              )}
+            </div>
+          </div>
+
           {item.subItems && expandedItems.includes(index) && (
-            <div nav-type="level-2" className="flex flex-col ml-2.5 h-auto">
+            <div nav-type="level-2" className="flex flex-col mx-auto h-auto">
               {item.subItems.map((subItem, subIndex) => (
-                <div className="font-light  h-11" key={subIndex}>
+                <div className="font-light text-center h-11" key={subIndex}>
                   {subItem.label}
                 </div>
               ))}
             </div>
           )}
-          </div>
-            <div className={`w-10`}>
-              {item.subItems && (
-                <div className={`hamburger-row col3-index-${index} text-white`}>
-                <i class={`fa-solid fa-chevron-down hamburger-row col3-index-${index} ${expandedItems.includes(index) ? "fa-rotate-180" : ""}`}></i>
-                </div>
-              )}
-            </div>
         </div>
       ))}
     </div>
@@ -157,6 +168,3 @@ function MobileNav2(props) {
 }
 
 export default MobileNav2;
-
-
-

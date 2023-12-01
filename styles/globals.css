@@ -143,7 +143,7 @@ background-image: url('/images/down-carat.svg');
 }
 
 .open .hamburger-row {
-  @apply bg-bgs;
+  @apply bg-bgs text-blue-500;
 }
 
 .hamburger-level1 {
