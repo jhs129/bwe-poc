@@ -32,7 +32,7 @@
     @apply dark:text-primaryAccent hover:text-secondaryAccent text-secondaryDark;
   }
   button {
-    @apply mx-auto px-6 py-2 dark:bg-primaryAccent bg-primaryDark hover:bg-secondaryDark text-primaryLight hover:text-primaryAccent rounded-lg;
+    @apply mx-auto px-6 py-2 dark:bg-primaryAccent bg-primaryDark hover:bg-nav1 text-primaryLight hover:text-primaryAccent rounded-lg;
   }
 
   ul {
@@ -145,7 +145,7 @@ background-image: url('/images/down-carat.svg');
 }
 
 .open .hamburger-row {
-  @apply bg-bgs text-blue-500;
+  @apply bg-nav1 text-blue-500;
 }
 
 .hamburger-level1 {
