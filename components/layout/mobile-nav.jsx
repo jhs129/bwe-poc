@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import React, { useState } from "react";
 import { getDefaultContent } from "./mobile-nav.content";
 import Link from "next/link";
@@ -49,22 +49,22 @@ function MobileNav(props) {
           <div
             nav-type="level-1"
             key={index}
-            className={`flex flex-col text-base font-bold leading-44 h-${
+            className={`flex flex-col w-full text-base font-bold leading-44 h-${
               expandedItems.includes(index) ? "auto" : "11"
             }`}
             onClick={() => handleItemClick(index)}
           >
-            <div className="flex flex-row">
-              <div className={`hamburger-row col1-index-${index} w-[1/10]`}></div>
+            <div className="flex flex-row w-full">
+              <div className={`block hamburger-row col1-index-${index} w-[10%]`}></div>
               <div
-                className={`hamburger-row col2-index-${index} w-80 text-center`}
+                className={`flex w-[80%] justify-center hamburger-row col2-index-${index} w-[80%] text-center`}
               >
                 <div className={`hamburger-row col2-index-${index}`}>
                   {item?.src ? <Link className="text-primaryLight" href={item.src}>{item.text}</Link> : `${item.text}` }
                 </div>
               </div>
 
-              <div className={`hamburger-row col3-index-${index} h-11 w-[1/10]`}>
+              <div className={`hamburger-row col3-index-${index} h-11 w-[10%]`}>
                 {item.level2 && (
                   <div className={`hamburger-row col3-index-${index} text-white`}>
                     <i

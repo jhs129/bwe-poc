@@ -15,7 +15,7 @@ function Header(props) {
   }
 
   let mobileNavigation;
-  if(!props.mobileNavigation ) {
+  if (!props.mobileNavigation) {
     mobileNavigation = getDefaultContent();
   } else {
     mobileNavigation = props.mobileNavigation;
@@ -54,15 +54,15 @@ function Header(props) {
           {/* Logo and Hamburger Menu - Layer 1 */}
           <div
             id="top-row"
-            className="flex md:flex-row w-full md:w-80 justify-between"
+            className="flex flex-row w-full md:w-80"
           >
             {/* Logo Image */}
-            <div
-              id="logo"
-              className="flex pt-4 mx-auto md:mx-0 bg-primaryLight"
-            >
+
+            <div className="block w-[10%]"/>
+            <div className={`flex w-[80%] justify-center ${isOpen ? " bg-nav1 " : " bg-primaryLight"}`}>
               <Link href="/">
                 <Image
+                  id="logo"
                   src={logoImage}
                   alt="Logo Image"
                   width={100}
@@ -75,13 +75,17 @@ function Header(props) {
             {/*  Hamburger Button */}
             <div
               id="hamburger-div"
-              className={`absolute right-4 top-12 md:flex md:items-center md:justify-end${ isOpen ? " bg-nav1" : " bg-primaryLight"}`}
+              className={`flex w-[10%] pt-2 md:flex md:items-center md:justify-end${
+                isOpen ? " bg-nav1" : " bg-primaryLight"
+              }`}
             >
               <button
                 id="menu-btn"
                 aria-label="hamburger menu"
                 className={`block md:hidden hamburger  focus:outline-none ${
-                  isOpen ? "open bg-nav1 hover:bg-nav1" : " bg-primaryLight hover:bg-primaryLight "
+                  isOpen
+                    ? "open bg-nav1 hover:bg-nav1"
+                    : " bg-primaryLight hover:bg-primaryLight "
                 }`}
                 type="button"
                 onClick={() => {
@@ -104,7 +108,7 @@ function Header(props) {
             className="flex flex-col items-end pt-4 w-full self-start md:max-w-full"
           >
             {/* Navigation */}
-            <nav className="mx-auto md:mx-0">
+            <nav className="w-full">
               {/* Desktop Navigation */}
 
               <div id="desktop-nav" className="hidden md:flex md:flex-row">
@@ -136,8 +140,7 @@ function Header(props) {
                       className="bg-white w-5/6 flex flex-col text-gray-400 px-2 py-0 font-base font-sm font-secondary placeholder-gray-400 placeholder:font-thin placeholder:text-sm  rounded-lg border-none"
                       aria-label="Search"
                       placeholder="Search"
-                    >
-                    </input>
+                    ></input>
 
                     <div className="bg-bgs w-1/6 justify-center border-none rounded-l-none rounded-r-lg">
                       <i class="fa-solid fa-magnifying-glass px-2"></i>
@@ -148,9 +151,9 @@ function Header(props) {
               {/* Mobile Navigation */}
               <div
                 id="mobile-nav"
-                className="hidden flex-col bg-nav1 text-primaryLight font-sans tracking-wide mx-auto md:hidden"
+                className="hidden flex-col justify-center bg-nav1 text-primaryLight font-sans tracking-wide w-full md:hidden"
               >
-                <MobileNav navigation={mobileNavigation}/>
+                <MobileNav navigation={mobileNavigation} />
               </div>
             </nav>
           </div>
