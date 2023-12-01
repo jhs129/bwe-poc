@@ -33,10 +33,6 @@ const content = {
                 "src": "/login",
                 "text": "Login"
               }
-
-
-
-
             ]
           }
         ]
