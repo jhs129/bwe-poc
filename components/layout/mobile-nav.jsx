@@ -130,7 +130,7 @@ function MobileNav(props) {
           onClick={() => handleItemClick(index)}
         >
           <div className="flex flex-row">
-            <div className={`hamburger-row col1-index-${index} w-16`}></div>
+            <div className={`hamburger-row col1-index-${index} w-[1/10]`}></div>
             <div
               className={`hamburger-row col2-index-${index} w-60 text-center`}
             >
@@ -139,7 +139,7 @@ function MobileNav(props) {
               </div>
             </div>
 
-            <div className={`hamburger-row col3-index-${index} h-11 w-10`}>
+            <div className={`hamburger-row col3-index-${index} h-11 w-[1/10]`}>
               {item.subItems && (
                 <div className={`hamburger-row col3-index-${index} text-white`}>
                   <i

@@ -27,34 +27,47 @@ function Header(props) {
     const menu = document.getElementById("mobile-nav");
     menu.classList.toggle("hidden");
     menu.classList.toggle("flex");
+
+    const header = document.getElementById("header");
+    header.classList.toggle("bg-primaryLight");
+    header.classList.toggle("bg-nav1");
+
+    const hamburger = document.getElementById("hamburger-div");
+    hamburger.classList.toggle("bg-primaryLight");
+    hamburger.classList.toggle("bg-nav1");
+
+    const logo = document.getElementById("logo");
+    logo.classList.toggle("hidden");
+
+
   };
 
   return (
 
-    <div className="bg-primaryLight">
-      <header className="site-container pt-8 md:py-4 bg-primaryLight">
+    <div id="header" className="bg-primaryLight">
+      <header  className="site-container pt-8 md:py-4">
 
        
         <div className="flex gap-4 max-md:flex-wrap">
 
            {/* Logo and Hamburger Menu - Layer 1 */}
-          <div  id="logo"
-            className="flex flex-row w-full md:w-80 justify-between"
+          <div  id="top-row"
+            className="flex md:flex-row w-full md:w-80 justify-between"
           >
             {/* Logo Image */}
-            <div className="flex bg-primaryLight mx-auto">
+            <div id="logo" className="flex mx-auto md:mx-0 bg-primaryLight">
               <Link href="/">
                 <Image src={logoImage} alt="Logo Image" width={100} height={40} className="rounded-none shadow-none"/>
               </Link>
             </div>
 
             {/*  Hamburger Button */}
-            <div className="flex items-center justify-end bg-primaryLight">
+            <div id="hamburger-div" className="absolute right-0 top-6 md:flex md:items-center md:justify-end bg-primaryLight">
               <button
                 id="menu-btn"
                 aria-label="hamburger menu"
-                className={`block md:hidden hamburger  hover:bg-primaryLight focus:outline-none ${
-                  isOpen ? "open" : ""
+                className={`block md:hidden hamburger bg-primaryLight hover:bg-primaryLight focus:outline-none ${
+                  isOpen ? "open hover:bg-nav1" : ""
                 }`}
                 type="button"
                 onClick={() => {
