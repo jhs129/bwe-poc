@@ -14,17 +14,18 @@ module.exports = {
     extend: {
       colors: {
         primaryLight: '#FFF',
-        secondaryLight: '#EAE4C8',
-        primaryDark: '#121212',
-        secondaryDark: '#686868',
-        primaryAccent: '#88E8F0',
-        secondaryAccent: '#EB633F',
+        secondaryLight: '#FFF',
+        primaryDark: '#003655',
+        secondaryDark: '#242323',
+        tertiaryDark: '#004976',
+        nav1: 'rgba(0,73,118)',
+        primaryAccent: '#3FC599',
+        secondaryAccent: '#3D9BE9',
         tertiaryAccent: 'rgba(192, 100, 45, 0.7)',
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        secondary: ['var(--font-ibm-plex-sans)'],
-        foo: ['IBM Plex Sans', 'sans-serif'],
+        sans: ['var(--font-primary)'],
+        secondary: ['var(--font-secondary)'],
       },
       listStyleImage: {
         ringsPrimaryAccent: "url('/images/mark-teal2.svg')",

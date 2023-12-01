@@ -11,43 +11,42 @@ builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
 export default function Home(props) {
 
-  const gtmId = props.settings.gtmIdentifier || 'GTM-G-SH9PWT2FK1';
+  const gtmId = props?.settings?.gtmIdentifier || undefined;
 
+  if(gtmId) {
   useEffect(() => {
     // Initialize Google Tag Manager with your GTM ID
     initializeGoogleTagManager(gtmId);
   }, []);
+  }
+
+  const defaultDescription = 'This is our default description';
+  const defaultTitle = 'Demo Site | Home';
+  const defaultKeywords = 'keyword1, keyword2, keyword3';
 
   return (
     <>
       <Head>
         <title>
-          {props?.page?.data?.title || `JHS Digital Consulting | Home`}
+          {props?.page?.data?.title || defaultTitle}
         </title>
         <meta
           name="description"
           content={
             props?.page?.data?.description ||
-            `JHS Digital Consulting offers business transformation services emphasizing Experience Management, eCommerce, and Marketing Technology.`
+            defaultDescription
           }
         />
         <meta
           name="keywords"
-          content={
-            props?.page?.data?.keywords ||
-            `JHS Digital Consulting, John Schneider, Experience Management, eCommerce, Marketing Technology, Digital Transformation, Digital Consulting, Digital Strategy, Digital Marketing, Digital Experience, Digital Experience Platform, Digital Experience Cloud, Digital Experience Management, Digital Experience Platform, Digital Experience Cloud, Digital Experience Management, Digital Experience Optimization, Digital Experience Optimization`
-          }
+          content={props?.page?.data?.keywords || defaultKeywords}
         />
-        {/* <meta property="og:image" content="http://www.jhsdigitalconsulting.com/images/logo-blue.png" /> */}
         <meta property="og:image" content={props?.page?.data?.shareImage || null} />
 
         <meta property="og:title" content={props?.page?.data?.title || null} />
         <meta
           property="og:description"
-          content={
-            props?.page?.data?.description ||
-            `JHS Digital Consulting offers business transformation services emphasizing Experience Management, eCommerce, and Marketing Technology.`
-          }
+          content={props?.page?.data?.description || defaultDescription}
         />
       </Head>
       <Header

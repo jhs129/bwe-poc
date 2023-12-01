@@ -1,27 +1,27 @@
 import "@/styles/globals.css";
-import { Inter, IBM_Plex_Sans } from "next/font/google";
+import { Open_Sans, Inter } from "next/font/google";
 
 
-const inter = Inter({
+const primaryFont = Open_Sans({
   subsets: ["latin"],
   style: ['normal'],
   weights: [200, 300, 400],
   display: "swap",
-  variable: '--font-inter',
+  variable: '--font-primary',
 });
 
-const ibmPlexSans = IBM_Plex_Sans({
+const secondaryFont = Inter({
   subsets: ["latin"],
   weight: '400',
   display: "swap",
-  variable: '--font-ibm-plex-sans',
+  variable: '--font-secondary',
 });
 
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <main className={`${inter.variable} ${ibmPlexSans.variable} font-sans`}>
+      <main className={`${primaryFont.variable} ${secondaryFont.variable} font-sans`}>
           <Component {...pageProps} />
       </main>
     </>

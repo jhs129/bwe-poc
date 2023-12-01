@@ -6,18 +6,37 @@ const content = {
           {
             "level1": [
               {
-                "src": "/blogs",
-                "text": "Blog"
+                "src": "/solutions",
+                "text": "Solutions"
               },
               {
-                "src": "/services",
-                "text": "Services"
+                "src": "/locations",
+                "text": "Locations"
               },
-
               {
-                "src": "/contact",
-                "text": "Contact Us"
+                "src": "/rates",
+                "text": "Rates"
+              },
+              {
+                "src": "/investment-sales",
+                "text": "Investment Sales"
+              },
+              {
+                "src": "/insights",
+                "text": "Insights"
+              },
+              {
+                "src": "/about",
+                "text": "About"
+              },
+              {
+                "src": "/login",
+                "text": "Login"
               }
+
+
+
+
             ]
           }
         ]

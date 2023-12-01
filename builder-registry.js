@@ -1,7 +1,6 @@
 import { Builder } from "@builder.io/react";
 import dynamic from "next/dynamic";
 
-
 Builder.registerComponent(
   dynamic(() => import("./components/ui/youtube")),
   {
@@ -9,12 +8,11 @@ Builder.registerComponent(
     inputs: [
       {
         name: "videoId",
-        type: "text"
-      }
+        type: "text",
+      },
     ],
   }
 );
-
 //const { image, height, width, altText,lazyLoad } = props;
 
 Builder.registerComponent(
@@ -26,12 +24,22 @@ Builder.registerComponent(
       { name: "height", type: "number", defaultValue: 500 },
       { name: "width", type: "number", defaultValue: 500 },
       { name: "altText", type: "text", defaultValue: "alt text" },
-      { name: "lazyLoad", type: "text", defaultValue: "lazy",
+      {
+        name: "lazyLoad",
+        type: "text",
+        defaultValue: "lazy",
         enum: [
           { label: "lazy", value: "lazy" },
           { label: "eager", value: "eager" },
         ],
-    },
+      },
     ],
+  }
+);
+
+Builder.registerComponent(
+  dynamic(() => import("./components/Counter/Counter")),
+  {
+    name: "Counter",
   }
 );

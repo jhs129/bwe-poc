@@ -13,7 +13,7 @@ function Header(props) {
     navigation = props.navigation;
   }
 
-  let logoImage = "/images/logo-blue.png";
+  let logoImage = "/logo.png";
   if (props?.logo) {
     logoImage = props.logo;
   }
@@ -29,26 +29,26 @@ function Header(props) {
   };
 
   return (
-    <div className="bg-primaryDark">
-      <header className="site-container pt-8 md:py-4 bg-primaryDark">
+    <div className="bg-primaryLight">
+      <header className="site-container pt-8 md:py-4 bg-primaryLight">
         <div className="flex gap-4 max-md:flex-wrap">
           <div
             id="logo"
             className="flex flex-row w-full md:w-80 justify-between"
           >
             {/* Logo Image */}
-            <div className="flex bg-primaryDark">
+            <div className="flex bg-primaryLight">
               <Link href="/">
-                <Image src={logoImage} alt="JHS Digital Consulting Logo" width={500} height={200} />
+                <Image src={logoImage} alt="Logo Image" width={500} height={200} />
               </Link>
             </div>
 
             {/*  Hamburger Button */}
-            <div className="flex items-center justify-end bg-primaryDark">
+            <div className="flex items-center justify-end bg-primaryLight">
               <button
                 id="menu-btn"
                 aria-label="hamburger menu"
-                className={`block md:hidden hamburger  hover:bg-primaryDark focus:outline-none ${
+                className={`block md:hidden hamburger  hover:bg-primaryLight focus:outline-none ${
                   isOpen ? "open" : ""
                 }`}
                 type="button"
@@ -81,7 +81,7 @@ function Header(props) {
                   <Link
                     key={index}
                     href={item.src}
-                    className="text-2xl leading-6 self-start uppercase text-primaryAccent hover:text-secondaryDark font-thin"
+                    className="text-xs leading-6 self-start capitalize text-secondaryDark hover:text-secondaryDark font-bold"
                     aria-label={item.text}
                   >
                     {item.text}
@@ -93,13 +93,13 @@ function Header(props) {
 
               <div
                 id="mobile-nav"
-                className="hidden bg-primaryDark flex-col mx-auto items-start p-4 -mt-20 text-center md:hidden"
+                className="hidden bg-tertiaryDark flex-col mx-auto items-start p-4 -mt-20 text-center md:hidden"
               >
                 {navigation.group[0].level1.map((item, index) => (
                   <Link
                     key={index}
                     href={item.src}
-                    className="p-2 tracking-widest w-full text-left uppercase text-primaryLight"
+                    className="p-2 text-xs leading-6 font-bold w-full text-left capitalize text-primaryLight"
                     aria-label={item.text}
                   >
                     {item.text}
