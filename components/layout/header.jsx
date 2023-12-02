@@ -50,7 +50,7 @@ function Header(props) {
   return (
     <div id="header" className="bg-primaryLight">
       <header className="px-4 pt-8 md:py-4">
-        <div className="flex gap-4 max-md:flex-wrap">
+        <div className="flex flex-col gap-4 max-md:flex-wrap lg:flex-row">
           {/* Logo and Hamburger Menu - Layer 1 */}
           <div
             id="top-row"
@@ -58,7 +58,7 @@ function Header(props) {
           >
             {/* Logo Image */}
 
-            <div className="block pt-2 w-[10%]"/>
+            <div className="block pt-2 w-[10%] lg:-ml-16 xl:-ml-20"/>
             <div className={`flex pt-2 w-[80%] justify-center ${isOpen ? " bg-nav1 " : " bg-primaryLight"}`}>
               <Link href="/">
                 <Image
@@ -103,16 +103,16 @@ function Header(props) {
           </div>
 
           {/* Navigation */}
-          <div
+          {/* <div
             id="nav"
             className="flex flex-col items-end pt-2 w-full self-start lg:max-w-full"
-          >
+          > */}
             {/* Navigation */}
-            <nav className="w-full">
+            <nav id="t-nav" className="hidden w-0lg:flex lg:flex-col items-end pt-2 w-full self-start lg:flex xl:pl-40">
               {/* Desktop Navigation */}
 
               <div id="desktop-nav" className="hidden lg:flex lg:flex-row">
-                <div className="flex flex-wrap w-1/3 space-x-6 border-r-2 border-nav1 items-center pr-8 justify-end">
+                <div className="flex flex-wrap w-1/3 lg:w-[250px] xl:w-[400px] space-x-6 border-r-2 border-nav1 items-center pr-8 justify-end">
                   {navigation.group[0].level1.map((item, index) => (
                     <Link
                       key={index}
@@ -148,15 +148,18 @@ function Header(props) {
                   </div>
                 </div>
               </div>
-              {/* Mobile Navigation */}
-              <div
+            </nav>
+
+          {/* </div> */}
+          <nav id="m-nav" className="flex flex-col items-end pt-2 w-full self-start lg:hidden">
+                            {/* Mobile Navigation */}
+                            <div
                 id="mobile-nav"
                 className="hidden flex-col justify-center bg-nav1 text-primaryLight font-sans tracking-wide w-full lg:hidden"
               >
                 <MobileNav navigation={mobileNavigation} />
               </div>
             </nav>
-          </div>
         </div>
       </header>
     </div>
