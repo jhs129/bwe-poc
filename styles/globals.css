@@ -8,10 +8,10 @@
   }
 
   h1 {
-    @apply text-3xl dark:text-white text-primaryDark mb-4 font-primary font-bold uppercase;
+    @apply text-3xl dark:text-white text-primaryDark mb-4 font-primary font-bold;
   }
   h2 {
-    @apply text-2xl dark:text-primaryAccent text-primaryDark mb-4 tracking-wider capitalize font-bold;
+    @apply text-2xl dark:text-primaryAccent text-primaryDark mb-4 tracking-wider font-bold;
   }
   h3 {
     @apply text-xl mb-4 font-secondary font-bold dark:text-secondaryDark text-primaryDark;
@@ -36,12 +36,14 @@
   }
 
   ul {
-    @apply list-disc list-inside align-top;
+    @apply list-disc list-outside align-top;
   }
 
   li {
-    @apply list-image-ringsSecondaryAccent dark:list-image-ringsPrimaryAccent mb-4 break-inside-avoid-column;
+    @apply list-image-arrow dark:list-image-ringsPrimaryAccent mb-4;
+
   }
+
 
   input {
     @apply text-black bg-primaryLight border-primaryAccent border-2 rounded-lg p-2 placeholder:text-primaryDark placeholder:italic placeholder:font-extralight;
@@ -51,9 +53,6 @@
     @apply text-black bg-primaryLight border-primaryAccent border-2 rounded-lg p-2  placeholder:text-primaryDark placeholder:italic placeholder:font-extralight;
   }
 
-  img {
-    @apply shadow-lg rounded-lg;
-  }
 
 }
 

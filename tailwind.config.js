@@ -35,7 +35,8 @@ module.exports = {
       listStyleImage: {
         ringsPrimaryAccent: "url('/images/mark-teal2.svg')",
         ringsSecondaryAccent: "url('/images/mark-orange.svg')",
-        ringsPrimaryDark: "url('/images/mark-black.svg')"
+        ringsPrimaryDark: "url('/images/mark-black.svg')",
+        arrow: "url('/images/li-arrow.svg')",
       },
     },
   },
