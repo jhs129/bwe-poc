@@ -137,10 +137,10 @@ export default function Page(props) {
         logo={props?.settings?.logo || undefined}
       />
       <main>
-        <div className="site-container">
+
           {/* Render the Builder page */}
           <BuilderComponent model="page" content={props?.page || undefined} />
-        </div>
+ 
       </main>
       <Footer
         navigation={props?.footer || undefined}
