@@ -130,7 +130,7 @@ function Header(props) {
                   </span>
                   <Link href="#">
                     {" "}
-                    <i class="fa-solid fa-chevron-right fa-sm text-bgs px-4"></i>
+                    <i aria-hidden className="fa-solid fa-chevron-right fa-sm text-bgs px-4"></i>
                   </Link>
                 </div>
                 <div className="mx-auto w-full justify-end md:w-80 md:m-0 p-4">
@@ -143,7 +143,7 @@ function Header(props) {
                     ></input>
 
                     <div className="bg-bgs w-1/6 justify-center border-none rounded-l-none rounded-r-lg">
-                      <i class="fa-solid fa-magnifying-glass px-2"></i>
+                      <i aria-hidden className="fa-solid fa-magnifying-glass px-2"></i>
                     </div>
                   </div>
                 </div>

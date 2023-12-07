@@ -15,8 +15,8 @@ module.exports = {
     extend: {
       colors: {
         primaryLight: '#FFF',
-        secondaryLight: '#FFF',
-        primaryDark: '#003655',
+        secondaryLight: '#8B949E',
+        primaryDark: '#1A3673',
         secondaryDark: '#242323',
         tertiaryDark: '#004976',
         nav1: 'rgba(0,73,118)',
@@ -29,8 +29,8 @@ module.exports = {
         '44': '44px',
       },
       fontFamily: {
-        primary: ['var(--font-primary)'],
-        secondary: ['var(--font-secondary)'],
+        primary: ['Roboto', 'sans-serif'],
+        secondary: ['Roboto', 'sans-serif'],
       },
       listStyleImage: {
         ringsPrimaryAccent: "url('/images/mark-teal2.svg')",

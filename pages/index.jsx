@@ -58,6 +58,7 @@ export default function Home(props) {
 
           {/* Render the Builder page */}
           <BuilderComponent model="page" content={props?.page || undefined} />
+    
 
       </main>
       <Footer

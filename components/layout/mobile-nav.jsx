@@ -67,8 +67,8 @@ function MobileNav(props) {
               <div className={`hamburger-row col3-index-${index} h-11 w-[10%]`}>
                 {item.level2 && (
                   <div className={`hamburger-row col3-index-${index} text-white`}>
-                    <i
-                      class={`fa-solid fa-chevron-down text-white ${
+                    <i aria-hidden
+                       className={`fa-solid fa-chevron-down text-white ${
                         expandedItems.includes(index) ? "fa-rotate-180" : ""
                       }`}
                     ></i>

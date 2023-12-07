@@ -43,3 +43,10 @@ Builder.registerComponent(
     name: "Counter",
   }
 );
+
+Builder.registerComponent(
+  dynamic(() => import("./components/ui/text-image-hero")),
+  {
+    name: "TextImageHero",
+  }
+);
