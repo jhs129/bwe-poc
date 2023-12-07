@@ -4,17 +4,17 @@
 
 @layer base {
   body {
-    @apply dark:bg-primaryDark bg-secondaryLight dark:text-white text-black text-xl leading-8 font-primary;
+    @apply  bg-secondaryLight dark:text-white text-black text-xl leading-8 font-primary;
   }
 
   h1 {
-    @apply text-3xl dark:text-white text-primaryDark mb-4 font-primary font-bold;
+    @apply text-3xl dark:text-white text-primaryDark font-primary font-bold;
   }
   h2 {
     @apply text-2xl dark:text-primaryAccent text-primaryDark mb-4 tracking-wider font-bold;
   }
   h3 {
-    @apply text-xl mb-4 font-secondary font-bold dark:text-secondaryDark text-primaryDark;
+    @apply text-xl mb-4 font-secondary font-bold  text-primaryDark;
   }
   h4 {
     @apply text-lg dark:text-primaryAccent text-primaryDark mb-4 font-primary;
@@ -26,23 +26,23 @@
     @apply mb-4 font-secondary;
   }
   p {
-    @apply mb-4 font-primary;
+    @apply mb-4 font-primary text-sm;
   }
   a {
-    @apply dark:text-primaryAccent hover:text-secondaryAccent text-secondaryDark;
+    @apply  hover:text-secondaryAccent text-secondaryDark;
   }
   button {
-    @apply mx-auto px-6 py-2 dark:bg-primaryAccent bg-primaryDark hover:bg-nav1 text-primaryLight hover:text-primaryAccent rounded-lg;
+    @apply mx-auto px-6 py-2  bg-primaryAccent hover:bg-secondaryLight text-primaryLight hover:text-primaryAccent rounded-lg;
   }
 
   ul {
-    @apply list-disc list-outside align-top;
+    @apply list-disc list-outside align-middle;
   }
 
   li {
-    @apply list-image-arrow dark:list-image-ringsPrimaryAccent mb-4;
+    @apply list-image-check mb-2 text-sm items-center  
   }
-
+   
 
   input {
     @apply text-black bg-primaryLight border-primaryAccent border-2 rounded-lg p-2 placeholder:text-primaryDark placeholder:italic placeholder:font-extralight;

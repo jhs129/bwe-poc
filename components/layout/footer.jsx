@@ -54,8 +54,8 @@ function Footer(props) {
   }
 
   return (
-    <div className="bg-primaryDark">
-      <footer className="p-4 flex flex-col">
+    <footer className="bg-primaryDark">
+      <div className="p-4 flex flex-col">
         <div className="flex flex-col-reverse md:flex-row space-x-8">
           <nav
             id="footer-nav"
@@ -168,8 +168,8 @@ function Footer(props) {
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 }
 

@@ -48,8 +48,8 @@ function Header(props) {
   };
 
   return (
-    <div id="header" className="bg-primaryLight">
-      <header className="px-4 pt-8 md:py-4">
+    <header id="header" className="bg-primaryLight">
+      <div className="px-6 pt-8 md:py-4">
         <div className="flex flex-col gap-4 max-md:flex-wrap lg:flex-row">
           {/* Logo and Hamburger Menu - Layer 1 */}
           <div
@@ -161,8 +161,8 @@ function Header(props) {
               </div>
             </nav>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }
 
