@@ -54,12 +54,12 @@ function Footer(props) {
   }
 
   return (
-    <div className="bg-primaryDark">
-      <footer className="p-4 flex flex-col">
+    <footer className="bg-primaryDark container mx-auto">
+      <div className="p-4 flex flex-col">
         <div className="flex flex-col-reverse md:flex-row space-x-8">
           <nav
             id="footer-nav"
-            className="grid grid-cols-2 w-full gap-4 md:flex md:flex-row md:justify-between md:space-x-8 md:space-y-0  text-white text-xs font-light leading-5 md:w-10/12"
+            className="grid grid-cols-2 w-full gap-4 md:flex md:flex-row md:justify-between md:space-x-8 md:space-y-0  text-white text-xs font-light leading-5 md:w-full"
           >
             <div id="logo-social" className="hidden md:flex md:flex-col">
               <Image src={logo} alt="Logo" width={150} height={65} />
@@ -86,17 +86,17 @@ function Footer(props) {
               </div>
             </div>
             {navItems.group.map((group, index) => (
-              <div className="flex flex-col md:flex-row mt-0" key={index}>
+              <div id={`nav-group-${index}`} className="flex flex-col md:flex-row mt-0 max-w-[120px] " key={index}>
                 {group.level1.map((level1, index2) => (
                   <div className="mt-0 space-y-1" key={index2}>
                     <div className="text-primaryLight text-sm font-medium leading-5 font-primary">
                       {level1.text}
                     </div>
-                    <ul className="list-image-none">
+                    <div>
                       {level1?.level2 &&
                         level1.level2.map((item2, index3) => (
-                          <li
-                            className="list-none list-image-none mb-2"
+                          <div
+                            className="mb-2"
                             key={index3}
                           >
                             <Link
@@ -105,9 +105,9 @@ function Footer(props) {
                             >
                               {item2.text}
                             </Link>
-                          </li>
+                          </div>
                         ))}
-                    </ul>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -168,8 +168,8 @@ function Footer(props) {
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 }
 

@@ -1,52 +1,52 @@
-import { Builder } from "@builder.io/react";
+import { Builder, withChildren } from "@builder.io/react";
 import dynamic from "next/dynamic";
 
 Builder.registerComponent(
-  dynamic(() => import("./components/ui/youtube")),
+  dynamic(() => import("./components/ui/hero")),
   {
-    name: "Youtube Embed",
+    name: "Hero",
     inputs: [
-      {
-        name: "videoId",
-        type: "text",
-      },
-    ],
-  }
-);
-//const { image, height, width, altText,lazyLoad } = props;
-
-Builder.registerComponent(
-  dynamic(() => import("./components/ui/next-image")),
-  {
-    name: "NextJS Image",
-    inputs: [
-      { name: "image", type: "file" },
-      { name: "height", type: "number", defaultValue: 500 },
-      { name: "width", type: "number", defaultValue: 500 },
-      { name: "altText", type: "text", defaultValue: "alt text" },
-      {
-        name: "lazyLoad",
-        type: "text",
-        defaultValue: "lazy",
-        enum: [
-          { label: "lazy", value: "lazy" },
-          { label: "eager", value: "eager" },
-        ],
-      },
+      { name: 'desktopImage', type: 'file', friendlyName: 'Desktop Image' },
+      { name: 'mobileImage', type: 'file', friendlyName: 'Mobile Image' },
+      { name: 'title', type: 'string', defaultValue: 'Enter Title Here' },
+      { name: 'body', type: 'richText', defaultValue: 'Enter Body Here' },
+      { name: 'buttonLabel', type: 'string', defaultValue: 'Click Me' },
+      { name: 'buttonUrl', type: 'string', defaultValue: '#' },
     ],
   }
 );
 
 Builder.registerComponent(
-  dynamic(() => import("./components/Counter/Counter")),
-  {
-    name: "Counter",
-  }
+withChildren(
+  dynamic(() => import("./components/ui/card-section"))
+),
+{
+  name: "Card Section",
+  childRequirements: {
+    message: "You can only put in Card components",
+    query: {
+      "component.name": { $in: ["Card"] },
+    },
+  },
+  inputs: [
+    {
+      name: "headline",
+      type: "text",
+      defaultValue: "[Default Headline]",
+    },
+  ],
+}
 );
 
 Builder.registerComponent(
-  dynamic(() => import("./components/ui/text-image-hero")),
+  dynamic(() => import("./components/ui/card")),
   {
-    name: "TextImageHero",
+    name: "Card",
+    inputs: [
+      { name: 'title', type: 'string', defaultValue: 'Enter Title Here' },
+      { name: 'body', type: 'richText', defaultValue: 'Enter Body Here' },
+      { name: 'linkText', type: 'string', defaultValue: 'Click Me' },
+      { name: 'linkUrl', type: 'string', defaultValue: '#' },
+    ],
   }
 );
