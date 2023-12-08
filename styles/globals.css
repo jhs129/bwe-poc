@@ -8,7 +8,9 @@
   }
 
   h1 {
-    @apply text-[1.75rem] leading-[2.25rem] md:text-4xl lg:text-5xl xl:text-[4rem] xl:leading-[4.25rem] font-light;
+    /* @apply text-[1.75rem] leading-[2.25rem] md:text-4xl lg:text-5xl xl:text-[4rem] xl:leading-[4.25rem] font-light; */
+    @apply text-[4rem] leading-[4.25rem] font-light;
+
   }
 
   h2 {
@@ -53,23 +55,11 @@
     @apply text-black bg-primaryLight border-primaryAccent border-2 rounded-lg p-2  placeholder:text-primaryDark placeholder:italic placeholder:font-extralight;
   }
   
- /*
-  header {
-    @apply container;
-  }
-
-  section {
-    @apply container;
-  }
-
-  footer {
-    @apply container;
-  } */
-
-
 }
 
-.hero-h1 {
+
+
+.hero h1 {
   
   @apply text-[1.75rem] leading-[2.25rem] md:text-4xl lg:text-5xl xl:text-[4rem] xl:leading-[4.25rem] font-light;
 
