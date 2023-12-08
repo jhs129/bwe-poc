@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply  bg-secondaryLight dark:text-white text-xl leading-8 font-primary text-black;
+    @apply  bg-primaryLight dark:text-white text-xl leading-8 font-primary text-black;
   }
 
   h1 {
@@ -12,10 +12,11 @@
   }
 
   h2 {
-    @apply text-[2.5rem] leading-[3.75rem] font-light;
+    @apply text-2xl leading-8 md:text-[2.5rem] md:leading-[3.75rem] font-light;
+
   }
   h3 {
-    @apply text-4xl leading-[3.75rem] font-light;
+    @apply text-xl leading-8 md:text-4xl md:leading-[3.75rem] font-light;
   }
   h4 {
     @apply text-[1.75rem] leading-[2.25rem] font-normal;
@@ -51,12 +52,38 @@
   textarea {
     @apply text-black bg-primaryLight border-primaryAccent border-2 rounded-lg p-2  placeholder:text-primaryDark placeholder:italic placeholder:font-extralight;
   }
+  
+ /*
+  header {
+    @apply container;
+  }
+
+  section {
+    @apply container;
+  }
+
+  footer {
+    @apply container;
+  } */
 
 
 }
 
+.body-large {
+  @apply text-base leading-6 font-light;
+
+}
+
+.body-medium {
+  @apply text-sm leading-6 font-light;
+}
+
+.body-medium.bold {
+  @apply font-normal;
+}
+
 .body-small {
-  @apply text-[10px] font-light leading-4 font-primary;
+  @apply text-[10px] font-light leading-4;
 }
 
 .body-small.bold {

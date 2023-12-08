@@ -136,7 +136,7 @@ export default function Page(props) {
         navigation={props?.header || undefined}
         logo={props?.settings?.logo || undefined}
       />
-      <main>
+      <main className="container mx-auto">
 
           {/* Render the Builder page */}
           <BuilderComponent model="page" content={props?.page || undefined} />

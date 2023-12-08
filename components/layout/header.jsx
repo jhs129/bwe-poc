@@ -48,7 +48,7 @@ function Header(props) {
   };
 
   return (
-    <header id="header" className="bg-primaryLight">
+    <header id="header" className="bg-primaryLight container mx-auto">
       <div className="px-6 pt-8 md:py-4">
         <div className="flex flex-col gap-4 max-md:flex-wrap lg:flex-row">
           {/* Logo and Hamburger Menu - Layer 1 */}
@@ -58,8 +58,7 @@ function Header(props) {
           >
             {/* Logo Image */}
 
-            <div className="block pt-2 w-[10%] lg:-ml-16 xl:-ml-20"/>
-            <div className={`flex pt-2 w-[80%] justify-center ${isOpen ? " bg-nav1 " : " bg-primaryLight"}`}>
+            <div className={`flex pt-2 w-[90%] items-start ${isOpen ? " bg-nav1 " : " bg-primaryLight"}`}>
               <Link href="/">
                 <Image
                   id="logo"

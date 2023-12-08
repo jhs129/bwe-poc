@@ -1,4 +1,4 @@
-import { Builder } from "@builder.io/react";
+import { Builder, withChildren } from "@builder.io/react";
 import dynamic from "next/dynamic";
 
 Builder.registerComponent(
@@ -16,6 +16,27 @@ Builder.registerComponent(
   }
 );
 
+Builder.registerComponent(
+withChildren(
+  dynamic(() => import("./components/ui/card-section"))
+),
+{
+  name: "Card Section",
+  childRequirements: {
+    message: "You can only put in Card components",
+    query: {
+      "component.name": { $in: ["Card"] },
+    },
+  },
+  inputs: [
+    {
+      name: "headline",
+      type: "text",
+      defaultValue: "[Default Headline]",
+    },
+  ],
+}
+);
 
 Builder.registerComponent(
   dynamic(() => import("./components/ui/card")),

@@ -9,7 +9,7 @@ function Hero(props) {
   let buttonLink = props?.buttonLink || "#";
 
   return (
-    <div className="flex h-[600px] md:h-[420px] lg:h-[560px] xl:h-[600px]">
+    <div className="flex h-[600px] md:h-[420px] lg:h-[560px] xl:h-[780px]">
       <img
         src={desktopImage}
         className="hidden md:block md:absolute top-0 left-0 w-screen z-10"
