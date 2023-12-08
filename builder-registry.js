@@ -50,3 +50,18 @@ Builder.registerComponent(
     ],
   }
 );
+
+Builder.registerComponent(
+  dynamic(() => import("./components/ui/color-card")),
+  {
+    name: "Color Card",
+    inputs: [
+      { name: 'title', type: 'string', defaultValue: 'Enter Title Here' },
+      { name: 'body', type: 'richText', defaultValue: 'Enter Body Here' },
+      { name: 'color', type: 'color'},
+
+    ],
+  }
+);
+
+
