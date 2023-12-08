@@ -5,7 +5,7 @@ function Card(props) {
   let linkUrl = props?.linkUrl || "#";
 
   return (
-    <div className="border-black border-t-2 border-b-0 w-full lg:w-80 mx-6">
+    <div className="border-black border-t-2 border-b-0 w-[90%] lg:w-72 xl:w-80 mx-6">
       <div className="mt-4">
         <h4>{title}</h4>
         <div className="body-large mt-4">{body}</div>
