@@ -69,6 +69,13 @@
 
 }
 
+.hero-h1 {
+  
+  @apply text-[1.75rem] leading-[2.25rem] md:text-4xl lg:text-5xl xl:text-[4rem] xl:leading-[4.25rem] font-light;
+
+} 
+
+
 .body-large {
   @apply text-base leading-6 font-light;
 
