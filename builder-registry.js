@@ -15,3 +15,17 @@ Builder.registerComponent(
     ],
   }
 );
+
+
+Builder.registerComponent(
+  dynamic(() => import("./components/ui/card")),
+  {
+    name: "Card",
+    inputs: [
+      { name: 'title', type: 'string', defaultValue: 'Enter Title Here' },
+      { name: 'body', type: 'richText', defaultValue: 'Enter Body Here' },
+      { name: 'linkText', type: 'string', defaultValue: 'Click Me' },
+      { name: 'linkUrl', type: 'string', defaultValue: '#' },
+    ],
+  }
+);

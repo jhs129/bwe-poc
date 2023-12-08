@@ -4,32 +4,33 @@
 
 @layer base {
   body {
-    @apply  bg-secondaryLight dark:text-white text-black text-xl leading-8 font-primary;
+    @apply  bg-secondaryLight dark:text-white text-xl leading-8 font-primary text-black;
   }
 
   h1 {
-    @apply text-3xl dark:text-white text-primaryDark font-primary font-bold;
+    @apply text-[1.75rem] leading-[2.25rem] md:text-4xl lg:text-5xl xl:text-[4rem] xl:leading-[4.25rem] font-light text-primaryDark;
   }
+
   h2 {
-    @apply text-2xl dark:text-primaryAccent text-primaryDark mb-4 tracking-wider font-bold;
+    @apply text-[2.5rem] leading-[3.75rem] font-light;
   }
   h3 {
-    @apply text-xl mb-4 font-secondary font-bold  text-primaryDark;
+    @apply text-4xl leading-[3.75rem] font-light;
   }
   h4 {
-    @apply text-lg dark:text-primaryAccent text-primaryDark mb-4 font-primary;
+    @apply text-[1.75rem] leading-[2.25rem] font-normal;
+    ;
   }
   h5 {
-    @apply text-base mb-4 text-primaryDark font-bold font-primary;
+    @apply text-xl leading-8 font-light;
   }
-  h6 {
-    @apply mb-4 font-secondary;
-  }
+
   p {
-    @apply mb-4 font-primary text-sm;
+    @apply text-sm font-light leading-6;
   }
+
   a {
-    @apply  hover:text-secondaryAccent text-secondaryDark;
+    @apply  hover:text-secondaryAccent;
   }
   button {
     @apply mx-auto px-6 py-2  bg-primaryAccent hover:bg-secondaryLight text-primaryLight hover:text-primaryAccent rounded-lg;
@@ -43,7 +44,6 @@
     @apply list-image-check mb-2 text-sm items-center  
   }
    
-
   input {
     @apply text-black bg-primaryLight border-primaryAccent border-2 rounded-lg p-2 placeholder:text-primaryDark placeholder:italic placeholder:font-extralight;
   }
@@ -54,6 +54,19 @@
 
 
 }
+
+.body-small {
+  @apply text-[10px] font-light leading-4 font-primary;
+}
+
+.body-small.bold {
+  @apply font-semibold;
+}
+
+.body-inline {
+  @apply text-[12px] uppercase leading-4 font-normal font-primary;
+}
+
 
 .form-label {
     @apply text-lg dark:text-primaryAccent text-primaryDark mb-4 capitalize font-semibold;

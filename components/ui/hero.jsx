@@ -9,10 +9,10 @@ function Hero(props) {
   let buttonLink = props?.buttonLink || "#";
 
   return (
-    <div className="flex h-[600px] md:h-[400px]">
+    <div className="flex h-[600px] md:h-[420px] lg:h-[560px] xl:h-[600px]">
       <img
         src={desktopImage}
-        className="hidden md:block md:absolute top-0 left-0 md:h-[400px] w-screen z-10"
+        className="hidden md:block md:absolute top-0 left-0 w-screen z-10"
       />
       <img
         src={mobileImage}
@@ -22,11 +22,11 @@ function Hero(props) {
         id="hero-content"
         className="absolute top-0 left-0 w-screen z-20 px-4 md:px-6"
       >
-        <div className="flex flex-col my-20 md:my-12 md:w-[45%]">
-          <h1 className="text-black font-light" aria-label={title}>
+        <div className="flex flex-col my-20 md:my-12 lg:my-40 xl:my-60 md:w-[45%]">
+          <h1 aria-label={title}>
             {title}
           </h1>
-          <div className="relative items-center flex p-6 max-w-full gap-2 max-md:flex-wrap mb-4 text-sm" dangerouslySetInnerHTML={{ __html: body }}></div>
+          <div className="relative items-center px-6 py-2 lg:py-4 xl:py-6 max-w-full gap-2 max-md:flex-wrap" dangerouslySetInnerHTML={{ __html: body }}></div>
           <div className="mt-0">
             <button className="bg-primaryAccent hover:bg-secondaryLight rounded-3xl">
               <a href={buttonLink} className="items-start text-sm p-0">
