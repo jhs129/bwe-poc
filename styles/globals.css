@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply  bg-primaryLight dark:text-white text-xl leading-8 font-primary text-black;
+    @apply  bg-primaryLight text-xl leading-8 font-primary text-black;
   }
 
   h1 {

@@ -40,6 +40,7 @@ export const getStaticProps = async ({ params }) => {
       userAttributes: {
         urlPath: "/" + (params?.page?.join("/") || ""),
       },
+      enrich: true,
     })
     .toPromise();
 
