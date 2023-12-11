@@ -6,7 +6,7 @@ import Head from "next/head";
 import "../builder-registry";
 import { initializeGoogleTagManager } from "@/js/tracking";
 import { useEffect } from "react";
-import Header from "@/components/layout/header";
+import Header from "@/components/layout/header2";
 import Footer from "@/components/layout/footer";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
@@ -16,7 +16,7 @@ builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 export const getStaticProps = async ({ params }) => {
 
   const headerContent = await builder
-    .get("navigation", { query: { name: "header-navigation" }, enrich: true })
+    .get("navigation", { query: { name: "header-navigation2" }, enrich: true })
     .promise();
 
   const footerContent = await builder

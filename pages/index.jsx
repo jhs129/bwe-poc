@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Head from "next/head";
-import Header from "@/components/layout/header";
+import Header from "@/components/layout/header2";
 import Footer from "@/components/layout/footer";
 import { BuilderComponent, builder, useIsPreviewing } from "@builder.io/react";
 import "../builder-registry";
@@ -75,7 +75,7 @@ export const getStaticProps = async ({ params }) => {
   // Fetch the builder content for the given page
 
   const desktopTopNav = await builder
-    .get("navigation", { query: { name: "header-navigation" }, enrich: true })
+    .get("navigation", { query: { name: "header-navigation2" }, enrich: true })
     .promise();
 
     const mobileTopNav = await builder
